@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Typography, Button, Table, Tag, Progress, message } from 'antd';
 import { ReloadOutlined, DashboardOutlined } from '@ant-design/icons';
 import { invoke } from '@tauri-apps/api/core';

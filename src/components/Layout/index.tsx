@@ -111,7 +111,7 @@ export default function AppLayout() {
   // 转换菜单项格式
   const transformMenuItems = (items: typeof menuItems): any[] => {
     return items.map((item) => {
-      if ('children' in item) {
+      if ('children' in item && item.children) {
         return {
           key: item.key,
           icon: item.icon,

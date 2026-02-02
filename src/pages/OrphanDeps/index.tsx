@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import {
-  Typography, Button, Table, Tag, Space, Card, Statistic, Row, Col, message, Modal
+  Typography, Button, Table, Tag, Card, Statistic, Row, Col, message, Modal
 } from 'antd';
 import {
   ReloadOutlined, DeleteOutlined, ExclamationCircleOutlined, BugOutlined
@@ -21,7 +21,6 @@ interface OrphanDependency {
 export default function OrphanDeps() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<OrphanDependency[]>([]);
-  const [selectedKeys, setSelectedKeys] = useState<React.Key[]>([]);
   const [removing, setRemoving] = useState(false);
 
   useEffect(() => {

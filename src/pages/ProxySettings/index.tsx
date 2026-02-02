@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Typography, Button, Table, Input, Space, message, Card } from 'antd';
+import { Typography, Button, Table, Input, message, Card } from 'antd';
 import { ReloadOutlined, SaveOutlined, GlobalOutlined } from '@ant-design/icons';
 import { invoke } from '@tauri-apps/api/core';
 import type { ColumnsType } from 'antd/es/table';

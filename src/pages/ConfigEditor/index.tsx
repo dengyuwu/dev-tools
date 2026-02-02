@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Row, Col, Tree, Card, Typography, Button, message, Empty, Input, Form, Switch, InputNumber, Spin } from 'antd';
-import { FolderOutlined, FileOutlined, ReloadOutlined, SaveOutlined } from '@ant-design/icons';
+import { FolderOutlined, ReloadOutlined, SaveOutlined } from '@ant-design/icons';
 import { invoke } from '@tauri-apps/api/core';
 import { DotFolder } from '../../types';
 import type { DataNode } from 'antd/es/tree';
 
-const { Title, Text } = Typography;
+const { Title } = Typography;
 
 export default function ConfigEditor() {
   const [folders, setFolders] = useState<DotFolder[]>([]);

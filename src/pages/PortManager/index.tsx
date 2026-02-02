@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import {
-  Typography, Table, Button, Space, Tag,
+  Typography, Table, Button, Tag,
   message, Modal, Input
 } from 'antd';
 import {

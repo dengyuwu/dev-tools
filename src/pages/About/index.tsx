@@ -1,5 +1,5 @@
 import { Typography, Row, Col } from 'antd';
-import { GithubOutlined, HeartOutlined } from '@ant-design/icons';
+import { HeartOutlined } from '@ant-design/icons';
 
 const { Title, Text, Paragraph } = Typography;
 

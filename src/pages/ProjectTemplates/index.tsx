@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Typography, Button, Card, Row, Col, Modal, Input, Form, message, Tag } from 'antd';
-import { FolderAddOutlined, RocketOutlined } from '@ant-design/icons';
+import { Typography, Card, Row, Col, Modal, Input, Form, message, Tag } from 'antd';
+import { RocketOutlined } from '@ant-design/icons';
 import { invoke } from '@tauri-apps/api/core';
 
 const { Title, Text } = Typography;

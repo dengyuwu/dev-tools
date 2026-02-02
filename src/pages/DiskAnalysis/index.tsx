@@ -44,7 +44,7 @@ export default function DiskAnalysis() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<DiskUsage[]>([]);
   const [breadcrumb, setBreadcrumb] = useState<{ name: string; path: string }[]>([]);
-  const [currentPath, setCurrentPath] = useState<string | null>(null);
+  const [_currentPath, setCurrentPath] = useState<string | null>(null);
 
   useEffect(() => {
     loadDiskUsage();

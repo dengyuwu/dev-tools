@@ -1,21 +1,27 @@
 import { create } from 'zustand';
 
-// 工具信息类型
+// 工具来源类型
+type ToolSource = 'npm' | 'cargo' | 'pip' | 'go' | 'script' | 'manual' | 'unknown';
+
+// 工具信息类型（与 types/index.ts 保持一致）
 interface ToolInfo {
   name: string;
-  version: string;
-  source: string;
-  path?: string;
-  hasUpdate?: boolean;
-  latestVersion?: string;
+  scope: string | null;
+  full_name: string;
+  version: string | null;
+  source: ToolSource;
+  install_path: string;
+  size_bytes: number;
+  description: string | null;
 }
 
 // 端口信息类型
 interface PortInfo {
   port: number;
-  pid: number;
-  process_name: string;
   protocol: string;
+  pid: number | null;
+  process_name: string | null;
+  state: string;
 }
 
 // 进程信息类型
@@ -32,7 +38,7 @@ interface CacheInfo {
   name: string;
   path: string;
   size_bytes: number;
-  size_display: string;
+  exists: boolean;
 }
 
 // 全局状态类型
@@ -75,7 +81,7 @@ interface AppState {
 
 const CACHE_DURATION = 5 * 60 * 1000; // 5分钟缓存
 
-export const useAppStore = create<AppState>((set, get) => ({
+export const useAppStore = create<AppState>((set, _get) => ({
   // 侧边栏状态
   siderCollapsed: false,
   setSiderCollapsed: (collapsed) => set({ siderCollapsed: collapsed }),
