@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Typography, Row, Col, Button, message } from 'antd';
-import { HeartOutlined, GithubOutlined, SyncOutlined } from '@ant-design/icons';
+import { GithubOutlined, SyncOutlined } from '@ant-design/icons';
 import { getVersion } from '@tauri-apps/api/app';
 import { openUrl } from '@tauri-apps/plugin-opener';
 import { invoke } from '@tauri-apps/api/core';
