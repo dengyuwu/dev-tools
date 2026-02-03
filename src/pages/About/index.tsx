@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Typography, Row, Col, Button, message } from 'antd';
 import { HeartOutlined, GithubOutlined, SyncOutlined } from '@ant-design/icons';
 import { getVersion } from '@tauri-apps/api/app';
-import { open } from '@tauri-apps/plugin-opener';
+import { openUrl } from '@tauri-apps/plugin-opener';
 import { invoke } from '@tauri-apps/api/core';
 
 const { Title, Text, Paragraph } = Typography;
@@ -20,7 +20,7 @@ export default function About() {
   // 打开 GitHub 页面
   const openGitHub = async () => {
     try {
-      await open(GITHUB_URL);
+      await openUrl(GITHUB_URL);
     } catch (e) {
       message.error('无法打开链接');
     }
@@ -33,7 +33,7 @@ export default function About() {
       const result = await invoke<{ available: boolean; version?: string } | null>('check_for_updates');
       if (result?.available) {
         message.success(`发现新版本 ${result.version}，请前往 GitHub 下载`);
-        await open(`${GITHUB_URL}/releases/latest`);
+        await openUrl(`${GITHUB_URL}/releases/latest`);
       } else {
         message.info('当前已是最新版本');
       }
